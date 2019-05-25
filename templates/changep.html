@@ -1,0 +1,27 @@
+{% extends './base.html' %}
+{% block title %}changep{% end %}
+{% block body %}
+    <form action="/changep" method="post">
+
+        <div class="form-group mx-sm-3 mb-2" style="width:300px">
+        <label for="username1">username</label>
+        <input type="text" class="form-control" id="username1" placeholder="username" name="username">
+        </div>
+        <div class="form-group mx-sm-3 mb-2" style="width:300px">
+        <label for="password1">password</label>
+        <input type="password" class="form-control" id="password1" placeholder="password" name="passwd">
+        </div>
+        <div class="form-group mx-sm-3 mb-2" style="width:300px">
+        <label for="password2">newpassword</label>
+        <input type="password" class="form-control" id="password2" placeholder="newpassword" name="newpasswd1">
+        </div>
+        <div class="form-group mx-sm-3 mb-2" style="width:300px">
+        <label for="password3">newpassword</label>
+        <input type="password" class="form-control" id="password3" placeholder="newpassword" name="newpasswd2">
+        </div>
+        <div class="form-group mx-sm-3 mb-2" style="width:300px">
+        {% module xsrf_form_html() %}
+        <button type="submit" class="btn btn-primary">Change</button>
+        </div>
+    </form>
+{% end %}

@@ -1,0 +1,13 @@
+{% extends './base.html' %}
+{% block title %}post{% end %}
+{% block body %}
+<img src="{{ static_url(post.image_url)}}">
+<br>
+<img src="{{ static_url(post.thumb_url)}}">
+<br>
+user_id:{{post.user_id}}
+<br>
+post_id:{{post.id}}
+<br>
+上传用户:{{post.user.username}}
+{% end %}
