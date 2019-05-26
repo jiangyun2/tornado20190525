@@ -5,7 +5,7 @@
 import tornado.ioloop
 import tornado.web
 from tornado.options import define,options
-from handlers import main
+from handlers import main,chat
 
 # 定义端口信息
 define('port',default=8888,type=int,help="Listening port")
@@ -21,6 +21,7 @@ class Application(tornado.web.Application):
             (r"/explore", main.ExploreHandler),
             (r"/upload", main.UploadHandler),
             (r"/exit", main.Exit1Handler),
+            (r"/websocket", chat.EchoWebSocket),
             # 命令捕获
             # (?P < post_id >[0-9]+) 捕获输入的id值传入到post_id中
             (r"/post/(?P<post_id>[0-9]+)", main.PostHandler),
