@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}room page{% end %}
+
+
+{% block body %}
+
+<div id="inbox">
+    {% for message in messages %}
+    {% raw message['html'] %}
+    {% end %}
+</div>
+
+
+<div id="input">
+    <form action="#" method="post" id="messageform">
+        <table>
+            <tr>
+                <td>
+                    <input name="body" id="message" style="width:500px">
+                    <input name="user" type="text" value="{{user}}" hidden>
+                </td>
+                <td style="padding-left:5px">
+                    {% module xsrf_form_html() %}
+                    <input type="submit" value="提交">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{% end %}
+
+{% block js %}
+<script type="application/javascript" src="{{ static_url('js/chat.js') }}"></script>
+{% end %}

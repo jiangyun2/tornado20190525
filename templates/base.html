@@ -28,7 +28,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {% if not user %}
-                登录
+                请登录
                 {% else %}
             {{user}}
             {% end %}
@@ -60,6 +60,6 @@
 <script src="{{static_url('js/popper.min.js')}}"></script>
 <!-- Bootstrap 核心 JavaScript 文件 -->
 <script src="{{static_url('js/bootstrap.js')}}"></script>
-
+    {% block js %} {% end %}
 </body>
 </html>
